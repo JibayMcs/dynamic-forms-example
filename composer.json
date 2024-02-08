@@ -27,8 +27,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "/home/jibaymcs/Programming/Programming/dynamic-forms"
+            "type": "vcs",
+            "url": "https://github.com/JibayMcs/dynamic-forms"
         }
     ],
     "autoload": {
