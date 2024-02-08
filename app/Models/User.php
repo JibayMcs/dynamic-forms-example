@@ -50,4 +50,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return true;
     }
+
+    public function dummyForm()
+    {
+        return $this->hasOne(DummyForm::class);
+    }
 }

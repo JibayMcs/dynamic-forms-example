@@ -37,10 +37,20 @@ class UserResource extends Resource
                 ->live()
             ]);*/
 
-            // Classic Form + Dynamic Form
-            ->schema([
+            // Classic Form + Dynamic Form from JSON
+            /*->schema([
                 Forms\Components\TextInput::make('test'),
                 ...DynamicForm::make(storage_path('forms.json'))
+            ]);*/
+
+            // Classic Form + Dynamic Form from relation
+            ->schema([
+                Forms\Components\TextInput::make('test'),
+
+                ...DynamicForm::make("test_form")
+                    ->default(storage_path('forms.json'))
+                    ->relationship('dummyForm', 'data', $form)
+                ->getSchema()
             ]);
     }
 
