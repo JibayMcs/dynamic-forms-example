@@ -40,8 +40,7 @@ class UserResource extends Resource
             // Classic Form + Dynamic Form
             ->schema([
                 Forms\Components\TextInput::make('test'),
-
-                ...DynamicForm::make(DummyForm::first(), 'data')
+                ...DynamicForm::make(storage_path('forms.json'))
             ]);
     }
 
