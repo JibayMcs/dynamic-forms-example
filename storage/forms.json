@@ -1,0 +1,36 @@
+{
+    "side": {
+        "field": "Filament\\Forms\\Components\\TextInput",
+        "label": "Side",
+        "default": "Default text hey !",
+        "required": true,
+        "hint": "Le côté où ajouter les espaces (left, right, both)"
+    },
+    "size": {
+        "field": "Filament\\Forms\\Components\\TextInput",
+        "label": "Size",
+        "hint": "La longueur de la chaîne",
+        "integer": true,
+        "default": 15,
+        "minValue": 10,
+        "visibleOn": ["create", "edit"],
+        "live": {
+            "onBlur": true
+        }
+    },
+    "character": {
+        "label": "Character",
+        "field": "Filament\\Forms\\Components\\TextInput",
+        "hint": "Le caractère à ajouter",
+        "afterStateUpdated": "($set, $get, $state, $old) => $set('character', 1234567890) // Not working",
+        "live": {
+            "onBlur": true
+        }
+    },
+    "visibleOnEdit": {
+        "field": "Filament\\Forms\\Components\\RichEditor",
+        "label": "Editor",
+        "hint": "I'm only visible on edit !",
+        "visibleOn": "edit"
+    }
+}
