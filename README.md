@@ -1,3 +1,114 @@
 ## About
 
 Laravel / FilamentPHP projet to test the use of the FilamentPHP plugin [jibaymcs/dynamic-forms](https://github.com/JibayMcs/dynamic-forms)
+
+## Load Form from JSON !
+
+### Example Form:
+
+```json
+{
+    "side": {
+        "field": "Filament\\Forms\\Components\\TextInput",
+        "label": "Side",
+        "default": "Default text hey !",
+        "required": true,
+        "hint": "Le côté où ajouter les espaces (left, right, both)"
+    },
+    "size": {
+        "field": "Filament\\Forms\\Components\\TextInput",
+        "label": "Size",
+        "hint": "La longueur de la chaîne",
+        "integer": true,
+        "default": 15,
+        "minValue": 10,
+        "visibleOn": [
+            "create",
+            "edit"
+        ],
+        "live": {
+            "onBlur": true
+        }
+    },
+    "Filament\\Forms\\Components\\Fieldset": {
+        "heading": "I'm a fieldset from JSON !",
+        "columns": 1,
+        "schema": [
+            {
+                "checkbox": {
+                    "field": "Filament\\Forms\\Components\\Checkbox",
+                    "label": "Checkbox",
+                    "hint": "I'm a checkbox from JSON !"
+                }
+            }
+        ]
+    },
+    "Filament\\Forms\\Components\\Tabs": {
+        "heading": "I'm a fieldset from JSON !",
+        "columns": 1,
+        "tabs": [
+            {
+                "Tab 1": [
+                    {
+                        "yayTabCheckbox": {
+                            "field": "Filament\\Forms\\Components\\Checkbox",
+                            "label": "Checkbox",
+                            "hint": "I'm a checkbox from JSON, From a Tab !"
+                        }
+                    },{
+                        "yayTabText": {
+                            "field": "Filament\\Forms\\Components\\TextInput",
+                            "label": "Woaw",
+                            "hint": "I'm a text input from JSON, From a Tab !"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "Filament\\Forms\\Components\\Grid": {
+        "columns": {
+            "sm": 3,
+            "xl": 6,
+            "2xl": 1
+        },
+        "schema": [
+            {
+                "character": {
+                    "label": "Character",
+                    "field": "Filament\\Forms\\Components\\TextInput",
+                    "hint": "Le caractère à ajouter",
+                    "live": {
+                        "onBlur": true
+                    }
+                }
+            },
+            {
+                "visibleOnEdit": {
+                    "field": "Filament\\Forms\\Components\\RichEditor",
+                    "label": "Editor",
+                    "hint": "I'm only visible on edit !",
+                    "visibleOn": "edit"
+                }
+            }
+        ]
+    },
+    "Filament\\Forms\\Components\\Section": {
+        "heading": "I'm a section from JSON !",
+        "description": "I'm a description from JSON too !",
+        "icon": "heroicon-m-shopping-bag",
+        "aside": false,
+        "collapsible": true,
+        "schema": [
+            {
+                "textOnSection": {
+                    "field": "Filament\\Forms\\Components\\TextInput",
+                    "label": "Text on section",
+                    "default": "I'm a text on a section !"
+                }
+            }
+        ]
+    }
+}
+
+```
